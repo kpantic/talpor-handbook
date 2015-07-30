@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../../../images/favicon.ico">
+        
+
+	<title>Post-Mortem - talPor Handbook</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">talPor Handbook</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">Home</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../conception/">Conception</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Development <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../">Introduction</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Methodology</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../">Introduction</a>
+</li>
+
+        
+            
+<li >
+    <a href="../meetings/">Meetings</a>
+</li>
+
+        
+            
+<li >
+    <a href="../trello/">Trello</a>
+</li>
+
+        
+            
+<li >
+    <a href="../done/">Definition of Done</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Post-Mortem</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../tech/">Tech Standards</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Deployment <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../deployment/">The Deployment Phase</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../deployment/continuous-integration/">Continuous Integration</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../wrapup/">Wrap-up</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../done/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../tech/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a href="https://github.com/talpor/talpor-handbook/">
+                            
+                                <i class="fa fa-github"></i>
+                            
+                            GitHub
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#the-process">The process</a></li>
+        
+            <li><a href="#post-mortem-report">Post-mortem report</a></li>
+        
+            <li><a href="#post-mortem-meeting">Post-mortem meeting</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h2 id="the-process">The process</h2>
+<p>At the end of a project cycle or when somebody gets out of the
+project, we run a <em>Post-mortem</em> or <em>Lessons learned</em> process.</p>
+<p>The <strong>Post-mortem</strong> is a valuable tool to ensure continuous
+improvement for a software development team. Although its name seems
+forbidding, it's just a process to assess how a project went. Some
+people prefer to call it a <em>Retrospective</em> instead because
+<em>Post-mortem</em> seems to be a negative term that implies the death of a
+project.</p>
+<p>In our case, we will stick to <em>Post-mortem</em> or <em>Lessons learned</em> since
+we actually run several retrospectives during the project lifespan and
+they have different approaches and goals than the ones being described
+here.</p>
+<p>In talPor <em>Post-mortems</em> are carried out in two phases. The first one
+is individual to every member of the project and consists in filling
+in a <em>Post-mortem report</em>. Each project member provides his own
+reflection and assessment about the overall project arc in a way that
+we can discover what went well and what could have been done better
+next time around. The ultimate goal is "lessons learned" — a set of
+actionable ideas for improving the next project.</p>
+<p>The second phase consists in a <em>Post-mortem meeting</em>. This is where
+the different reported outcomes are discussed and conclusions and
+"lessons learned" are drawn.</p>
+<p>There are two different scenarios where the <em>Post-mortems</em> are applied:</p>
+<ol>
+<li>A team member gets out of the project.</li>
+<li>The project cycle ends or the project is finished.</li>
+</ol>
+<p>For each scenario there is a different course of action. If a <strong>member
+leaves the team</strong> his post-mortem report will be evaluated in the
+following <em>Retrospective meeting</em>. In this case, the retrospective
+meeting will consists on the post-mortem evaluation as the first task,
+from which the outcomes will be used as input for the current
+retrospective where the ex-member is not bound to participate. In the
+case where the <strong>project cycle ends or the project is finished</strong> we
+organize a <em>Post-mortem meeting</em> as described before.</p>
+<h3 id="post-mortem-report">Post-mortem report</h3>
+<p>The purpose of the project's Post-mortem Report is to record, in
+detail, the specific project activities that were most effective and
+those that require adjustments for future projects. It could be seen
+as an overall reflection of what's been going on with the project. The
+objective of this report is to inform the development teams about
+those important lessons learned during the development of the project
+(i.e. obstacles, challenges, successes, what could be done differently
+next time, etc.), in a way that we can avoid making the same mistakes
+and learn from them.</p>
+<p>In talPor we have a custom post-mortem report template that is used to
+gather this information. This template is sent as a Google
+questionnaire and its answers are stored in a google spreadsheet. You
+can make a copy of this
+<a href="https://docs.google.com/a/talpor.com/forms/d/1TLO9iZJszQ_tteUVIzovL1BDCWnmdAWe3mwgfiKqhWQ/edit">questionnaire</a>
+for your project in order to carry out your own post-mortem process.</p>
+<h3 id="post-mortem-meeting">Post-mortem meeting</h3>
+<p>After all the post-mortem reports have been filled in, it's time to
+discuss and draw some team conclusions about the project. Once
+everyone have written the <em>post-mortem report</em> we are on the same page
+to discuss and derive some lessons learned about the process of the
+project.</p>
+<p>The meeting has to be scheduled as soon as all the post-mortem reports
+have been filled and handed in. According to the following cases the
+meeting will have different formats:</p>
+<ul>
+<li>
+<p><strong>One member leaves the team</strong>: In this case, the post-mortem
+   report of the one who left will be discussed during the next
+   <em>retrospective</em> meeting of the project. At the beginning of the
+   retrospective meeting, the post-mortem report of this member is
+   discussed and the conclusions of that discussion will feed the
+   retrospective meeting that will be carried out. It's not necessary
+   that this member participates in the entire retrospective meeting
+   as he doesn't belong to the team anymore.</p>
+</li>
+<li>
+<p><strong>The project finishes or closes</strong>: A post-mortem meeting is set up
+   in this case and no more retrospective meetings are carried out. In
+   this meeting the results of each post-mortem report are discussed
+   and some conclusions and lessons learned are drawn.</p>
+</li>
+</ul></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+                <p>talPor Solutions 2015</p>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
