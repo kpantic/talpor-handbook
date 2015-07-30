@@ -1,3 +1,9 @@
 [submodule "talpor-dev-handbook"]
 	path = talpor-dev-handbook
 	url = git@github.com:talpor/talpor-dev-handbook.git
+[submodule "talpor-culture-handbook"]
+	path = talpor-culture-handbook
+	url = git@github.com:talpor/talpor-culture-handbook.git
+[submodule "talpor-design-handbook"]
+	path = talpor-design-handbook
+	url = git@github.com:talpor/talpor-design-handbook.git
